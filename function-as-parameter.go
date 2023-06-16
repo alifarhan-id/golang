@@ -5,8 +5,10 @@ import (
 	"strings"
 )
 
+type FunctionParameter func(string) string
+
 // function say hallo with filter
-func sayHelloWithFilter(name string, convertToLowerCase func(string) string, filter func(string) string) {
+func sayHelloWithFilter(name string, convertToLowerCase FunctionParameter, filter FunctionParameter) {
 	lowerCaseName := convertToLowerCase(name)
 	nameFiltered := filter(lowerCaseName)
 
